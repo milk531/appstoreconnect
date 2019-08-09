@@ -150,6 +150,11 @@ function jsonParser(_key: any, value: any) {
             return url
         }
 
+        const num = numberStringToNumber(value)
+        if (num || num === 0) {
+            return num
+        }
+
         const date = dateStringToDate(value)
         if (date) {
             return date
@@ -158,13 +163,22 @@ function jsonParser(_key: any, value: any) {
     return value
 }
 
+function numberStringToNumber(value: string): Number | undefined {
+    try {
+        const num = Number(value)
+        if (num) {
+            return num
+        }
+    } catch { }
+}
+
 function urlStringToURL(value: string): URL | undefined {
     try {
         const url = new URL(value)
         if (url) {
             return url
         }
-    } catch {}
+    } catch { }
 }
 
 function dateStringToDate(value: string): DateTime | undefined {
