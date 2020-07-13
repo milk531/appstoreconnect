@@ -12,6 +12,7 @@ export namespace v1 {
     export const users = routes.users
     export const userInvitations = routes.userInvitations
     export const financeReports = routes.financeReports
+    export const metadata = routes.metadata
     export const token = auth.token
     export const tokenAsync = auth.tokenAsync
 }
@@ -145,3 +146,23 @@ export type Locale =
     | 'vi'
     | 'zh-Hans'
     | 'zh-Hant'
+export type AppInfoLocalizationsType =
+    | 'appInfo'
+    | 'locale'
+    | 'name'
+    | 'privacyPolicyText'
+    | 'privacyPolicyUrl'
+    | 'subtitle'
+export type AppInfoType =
+    | 'app'
+    | 'appInfoLocalizations'
+    | 'appStoreAgeRating'
+    | 'appStoreState'
+    | 'brazilAgeRating'
+    | 'kidsAgeBand'
+    | 'primaryCategory'
+    | 'primarySubcategoryOne'
+    | 'primarySubcategoryTwo'
+    | 'secondaryCategory'
+    | 'secondarySubcategoryOne'
+    | 'secondarySubcategoryTwo'
